@@ -24,22 +24,22 @@ difference() {
       }
       translate([0,copperY*0.5,0]){
         rotate(a = [90,0,0]) { // rotate around x axis
-          cylinder (h = copperY+0.2, r = copperZ, center = true);
+          cylinder (h = copperY+0.2, r = copperZ-0.4, center = true, $fs=50);
         }
       }
       translate([copperX,copperY*0.5,0]){
         rotate(a = [90,0,0]) { // rotate around x axis
-          cylinder (h = copperY+0.2, r = copperZ, center = true);
+          cylinder (h = copperY+0.2, r = copperZ-0.4, center = true, $fs=50);
         }
       }
       translate([copperX*0.5,0,0]){
-        rotate(a = [0,90,0]) { // rotate around x axis
-          cylinder (h = copperX+0.2, r = copperZ, center = true);
+        rotate(a = [0,90,0]) { // rotate around y axis
+          cylinder (h = copperX+0.2, r = copperZ-0.4, center = true, $fs=50);
         }
       }
       translate([copperX*0.5,copperY,0]){
-        rotate(a = [0,90,0]) { // rotate around x axis
-          cylinder (h = copperX+0.2, r = copperZ, center = true);
+        rotate(a = [0,90,0]) { // rotate around y axis
+          cylinder (h = copperX+0.2, r = copperZ-0.4, center = true, $fs=50);
         }
       }
     }
