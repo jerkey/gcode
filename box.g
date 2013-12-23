@@ -8,36 +8,36 @@ G1 Z2.5 ; this puts us 0.??mm above the metal
 G1 Y-6 F5000 ; come back from touchdown spot
 G1 Y-2.4 F2010 ; prepare for y descent 
 G1 Y3 Z-2 F1000 ; descend fast for the Y run
-G1 Y0.5 F500 ; do the y run PART 1/3
+G1 Y0.25 F400 ; do the y run PART 1/3
 M106
-G1 Y2.15 F500 ; do the y run PART 2/3
+G1 Y2.65 F400 ; do the y run PART 2/3
 M107
-G1 Y0.5 F500 ; do the y run PART 3/3
-G1 Y3 Z2 F500 ; rise after y run
+G1 Y0.25 F400 ; do the y run PART 3/3
+G1 Y3 Z2 F400 ; rise after y run
 G1 Y-2.4 X2.4 F2010 ; prepare for -x descent plus some
 G1 X-3 Z-2 F1000 ; descend fast for -x run
-G1 X-0.5 F500 ; do the -x run PART 1/3
+G1 X-0.25 F400 ; do the -x run PART 1/3
 M106
-G1 X-2.65 F500 ; do the -x run PART 2/3
+G1 X-3.15 F400 ; do the -x run PART 2/3
 M107
-G1 X-0.5 F500 ; do the -x run PART 3/3
-G1 X-3 Z2 F500 ; rise after -x run
+G1 X-0.25 F400 ; do the -x run PART 3/3
+G1 X-3 Z2 F400 ; rise after -x run
 G1 X2.4 Y2.4 F2010 ; prepare for -y descent plus some
 G1 Y-3 Z-2 F1000 ; descend for -y run
-G1 Y-0.5 F500 ; do the -y run PART 1/3
+G1 Y-0.25 F400 ; do the -y run PART 1/3
 M106
-G1 Y-2.15 F500 ; do the -y run PART 2/3
+G1 Y-2.65 F400 ; do the -y run PART 2/3
 M107
-G1 Y-0.5 F500 ; do the -y run PART 3/3
-G1 Y-3 Z2 F500 ; rise after -y run
+G1 Y-0.25 F400 ; do the -y run PART 3/3
+G1 Y-3 Z2 F400 ; rise after -y run
 G1 Y2.4 X-2.4 F2010 ; prepare for x descent plus some
 G1 X3 Z-2 F1000 ; descend for the x run
-G1 X0.5 F500 ; do the x run PART 1/3
+G1 X0.25 F400 ; do the x run PART 1/3
 M106
-G1 X2.65 F500 ; do the x run PART 2/3
+G1 X3.15 F400 ; do the x run PART 2/3
 M107
-G1 X0.5 F500 ; do the x run PART 3/3
-G1 X3 Z2 F500 ; rise after the x run
+G1 X0.25 F400 ; do the x run PART 3/3
+G1 X3 Z2 F400 ; rise after the x run
 G1 X-2.4 F2010 ; go back to where we started
 G1 X3.725 Y-0.325 F2010 ; start at near right corner of copper!
 ; width of teal needle is 0.75mm
