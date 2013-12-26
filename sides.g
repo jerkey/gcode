@@ -1,45 +1,49 @@
 ;pressure 20 PSI
 G91 ; relative positioning
 M201 Y20 X20 ; set acceleration to 20
-G1 X-3.725 Y0.325 F2010 ; start at near right corner of copper!
-G1 Y6 F5000 ; go inland to touch down
+G1 X-3.725 Y6 F5000 ; assuming start at near right corner of copper
 G1 Z-2.7 ; touch syringe to metal - start 2mm above!!!!!
-G1 Z2.6 ; this puts us 0.??mm above the metal
-G1 Y-6 F5000 ; come back from touchdown spot
-G1 Y-2.4 F2010 ; prepare for y descent 
-G1 Y3 Z-2 F1000 ; descend fast for the Y run
-G1 Y0.25 F500 ; do the y run PART 1/3
-M106
-G1 Y2.65 F500 ; do the y run PART 2/3
-M107
-G1 Y0.25 F500 ; do the y run PART 3/3
-G1 Y3 Z2 F500 ; rise after y run
-G1 Y-2.4 X2.4 F2010 ; prepare for -x descent plus some
-G1 X-3 Z-2 F1000 ; descend fast for -x run
-G1 X-0.25 F500 ; do the -x run PART 1/3
-M106
-G1 X-3.15 F500 ; do the -x run PART 2/3
-M107
-G1 X-0.25 F500 ; do the -x run PART 3/3
-G1 X-3 Z2 F500 ; rise after -x run
-G1 X2.4 Y2.4 F2010 ; prepare for -y descent plus some
-G1 Y-3 Z-2 F1000 ; descend for -y run
-G1 Y-0.25 F500 ; do the -y run PART 1/3
-M106
-G1 Y-2.65 F500 ; do the -y run PART 2/3
-M107
-G1 Y-0.25 F500 ; do the -y run PART 3/3
-G1 Y-3 Z2 F500 ; rise after -y run
-G1 Y2.4 X-2.4 F2010 ; prepare for x descent plus some
-G1 X3 Z-2 F1000 ; descend for the x run
-G1 X0.25 F500 ; do the x run PART 1/3
-M106
-G1 X3.15 F500 ; do the x run PART 2/3
-M107
-G1 X0.25 F500 ; do the x run PART 3/3
-G1 X3 Z2 F500 ; rise after the x run
-G1 X-2.4 F2010 ; go back to where we started
-G1 X3.725 Y-0.325 F2010 ; start at near right corner of copper!
+G1 Z0.6 ; this puts us 0.??mm above the metal AT PRINTING HEIGHT
+
+M106 ; turn extruder on
+G1 Y-5.5 F500 ; do the right -Y side run
+M107 ; turn extruder off
+G1 Y-2.5 Z2 F500 ; come back up after right -Y run
+
+G1 Y2 X-1.47 Z-2  ; one-third of 4.4mm distance between sides
+M106 ; extruder on
+G4 P200 ; wait 200 milliseconds to make a dot
+M107 ; extruder off
+G1 Z2 ; up
+G1 Y3.9 ; 3.15 + 0.75 thickness of line/dot
+G1 Z-2 ; down
+M106 ; extruder on
+G4 P200 ; wait 200 milliseconds to make a dot
+M107 ; extruder off
+G1 Z2 ; up
+
+G1 Y2.1 X-2.93 Z-2 ; 6-3.9, 4.4-1.47
+
+M106 ; turn extruder on
+G1 Y-5.5 F500 ; do the left -Y side run
+M107 ; turn extruder off
+G1 Y-2.5 Z2 F500 ; come back up after left -Y run
+
+G1 Y2 X1.47 Z-2 ; one-third of 4.4mm distance between sides
+M106 ; extruder on
+G4 P200 ; wait 200 milliseconds to make a dot
+M107 ; extruder off
+G1 Z2 ; up
+G1 Y3.9 ; 3.15 + 0.75 thickness of line/dot
+G1 Z-2 ; down
+M106 ; extruder on
+G4 P200 ; wait 200 milliseconds to make a dot
+M107 ; extruder off
+G1 Z2 ; up
+
+G1 X2.93 F5000; go back to right sideline
+G1 X3.725 Y-3.9 F5000 ; go back to where we started
+
 ; width of teal needle is 0.75mm
 ; width is 3.65mm (P1130840.RW2)
 ; height is 3.15mm (P1130839.RW2)
