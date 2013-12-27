@@ -11,18 +11,18 @@ M107 ; turn extruder off
 G1 Y-2 F900 ; come back up after right -Y run
 G1 Z2 F1000 ; rise up
 
-G1 Y2 X-1.49 Z-2 F1000 ; one-third of 4.47mm distance between sides
+G1 Y2 X-1.49 Z-2.1 F1000 ; one-third of 4.47mm distance between sides
 M106 ; extruder on
 G4 P200 ; wait 200 milliseconds to make a dot
 M107 ; extruder off
-G1 Z5 F1000; up
+G1 Z5.1 F1000; up
 G4 P500 ; wait to make sure strand doesn't drag onto cell spot
 G1 Y4.15 F400; 3.15 + 1mm thickness of line/dot
-G1 Z-5 F1000; down
+G1 Z-5.1 F1000; down
 M106 ; extruder on
 G4 P200 ; wait 200 milliseconds to make a dot
 M107 ; extruder off
-G1 Z2 F1000; up
+G1 Z2.1 F1000; up
 
 G1 Y1.85 X-2.98 Z-2 ; 6-4.15, 4.47-1.49
 
@@ -32,18 +32,18 @@ M107 ; turn extruder off
 G1 Y-2 F900 ; come back up after left -Y run
 G1 Z2 F1000 ; rise up
 
-G1 Y2 X1.49 Z-2 ; one-third of 4.47mm distance between sides
+G1 Y2 X1.49 Z-2.1 ; one-third of 4.47mm distance between sides
 M106 ; extruder on
 G4 P200 ; wait 200 milliseconds to make a dot
 M107 ; extruder off
-G1 Z5 F1000; up
+G1 Z5.1 F1000; up
 G4 P500 ; wait to make sure strand doesn't drag onto cell spot
 G1 Y4.15 F400; 3.15 + 1mm thickness of line/dot
-G1 Z-5 F1000; down
+G1 Z-5.1 F1000; down
 M106 ; extruder on
 G4 P200 ; wait 200 milliseconds to make a dot
 M107 ; extruder off
-G1 Z2 F1000; up
+G1 Z2.1 F1000; up
 
 G1 Y1.85 X2.98 ; 6-4.15, 4.47-1.49 for symmetrical finish
 G4 P500 ; make sure we don't drag a strand of goo over cell
