@@ -3,7 +3,7 @@ G91 ; relative positioning
 M201 Y20 X20 ; set acceleration to 20
 G1 X-3.725 Y6 F5000 ; assuming start at near right corner of copper
 G1 Z-2.7 ; touch syringe to metal - start 2mm above!!!!!
-G1 Z0.6 ; this puts us 0.??mm above the metal AT PRINTING HEIGHT
+G1 Z1.0 ; this puts us 0.??mm above the metal AT PRINTING HEIGHT
 
 M106 ; turn extruder on
 G1 Y-5.5 F500 ; do the right -Y side run
