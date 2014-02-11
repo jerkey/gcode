@@ -1,37 +1,19 @@
-;pressure 20PSI    THIS FILLS THE SQUARE WITH SOLDERPASTE
+;pressure 40PSI    THIS PUTS SOLDER PASTE ON BOTH BUSBARS
 G91 ; relative positioning
 M201 Y20 X20 ; set acceleration to 20
-G1 X-3.725 Y0.325 F2000 ; start at near right corner of copper!
-G1 Y6 F5000 ; go inland to touch down
-G1 Z-2 ; touch syringe to metal - start 1.9mm above!!!!!
-G1 Z2.5 ; this puts us 0.??mm above the metal
-G1 Y-6 F5000 ; come back from touchdown spot
-G1 Y-2.4 F2000 ; prepare for y descent 
-G1 Y3 Z-2 F1000 ; descend fast for the Y run
-M106
-G1 Y3.15 F200 ; do the y run
-M107
-G1 Y3 Z2 F200 ; rise after y run
-G1 Y-2.4 X2.4 F2000 ; prepare for -x descent plus some
-G1 X-3 Z-2 F1000 ; descend fast for -x run
-M106
-G1 X-3.65 F200 ; do the -x run
-M107
-G1 X-3 Z2 F200 ; rise after -x run
-G1 X2.4 Y2.4 F2000 ; prepare for -y descent plus some
-G1 Y-3 Z-2 F1000 ; descend for -y run
-M106
-G1 Y-3.15 F200 ; do the -y run
-M107
-G1 Y-3 Z2 F200 ; rise after -y run
-G1 Y2.4 X-2.4 F2000 ; prepare for x descent plus some
-G1 X3 Z-2 F1000 ; descend for the x run
-M106
-G1 X3.65 F200 ; do the x run
-M107
-G1 X3 Z2 F200 ; rise after the x run
-G1 X-2.4 F2000 ; go back to where we started
-G1 X3.725 Y-0.325 F2000 ; start at near right corner of copper!
+; from solder paste tip to camera "top" low-x corner (in focus)
+; Z+11 X-16.2 or 15.8 Y-2.4
+; start with high-y low-x point on busbars on camera
+; G1 X15.8 Y2.4 Z-11 F5000 ; move to just above the copper, for touch test
+M106 ; turn on solder paste extruder (and fan)
+G1 Y-3.15 F100 ; do the left -y run
+M107 ; turn off solder paste extruder (and fan)
+G1 Z2 F1000 ; rise after left -y run
+G1 X3.3 F4000 ; move over to the right busbar
+G1 Z-2 F1000 ; descend for the right +y run
+M106 ; turn on solder paste extruder (and fan)
+G1 Y3.15 F100 ; do the right +y run
+M107 ; turn off solder paste extruder (and fan)
 ; width of teal needle is 0.75mm
 ; width is 3.65mm (P1130840.RW2)
 ; height is 3.15mm (P1130839.RW2)
