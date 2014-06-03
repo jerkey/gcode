@@ -21,9 +21,12 @@ translate([cellx*-0.5+0.001,celly*-0.5,outerRadius-copper-polyimide]) rotate([-9
   translate([0,-1.1*outerRadius,-0.5]) cube([outerRadius+1,2*outerRadius+1,11]);
   }
 
-echo("outerRadius = ",outerRadius);
-
-// translate([cellx*-0.5,celly*-0.5,-1*copper]) color("goldenrod") cube(size = [cellx,20,copper]); // back copper
 flapwidth = 0.38; // width of flat polyimide flap above busbars, after rolled part
 translate([cellx*-0.5,celly*-0.5,2*outerRadius-copper-2*polyimide]) color("sienna") cube(size = [flapwidth,20,polyimide]); // flap over busbars - polyimide
 translate([cellx*-0.5+(flapwidth-busbarx),celly*-0.5,2*outerRadius-1.999*copper-2*polyimide]) color("goldenrod") cube(size = [busbarx,20,copper]); // flap over busbars - copper
+rollwidth = PI * (outerRadius - 0.5*polyimide); // flattened width of rolled part of polyimide
+nocopperwidth = rollwidth + (flapwidth-busbarx); // width of polyimide area without copper
+echo("outerRadius = ",outerRadius);
+echo("nocopperwidth = ",nocopperwidth);
+echo("busbarx = ",busbarx);
+echo("cellx = ",cellx);
