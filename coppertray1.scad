@@ -1,4 +1,4 @@
-$fn = 50;
+$fn = 25; // 50 is too many!  slic3r won't load it!
 copperZ = 0.85; // depth of copper indentation
 copperX = 12.72+0.06;  // 12.72mm + 0.06
 copperY = 27.88+0.52;  // 27.88mm + 0.52
@@ -16,7 +16,7 @@ difference() {
     translate([a,(copperTrayY-copperY)/2,copperTrayZ-copperZ]){
       cube([copperX+((a-4)/(copperX+2))*ooch,copperY+((a-4)/(copperX+2))*ooch,copperZ+0.1]); // cutout for the copper slab itself
       translate([copperX/2,12.5,-0.1+copperZ/2-(copperTrayZ+0.2)/2]){
-          cylinder (h = copperTrayZ+0.2, r = pegDiameter/2, center = true); // peg hole
+          cylinder (h = copperTrayZ+0.2, r = pegDiameter/2, center = true, $fn = 10); // peg hole
         }
       translate([copperX/2,20.5,-0.1+copperZ/2-(copperTrayZ+0.2)/2]){
           cylinder (h = copperTrayZ+0.2, r = screwDiameter/2, center = true); // screw hole
