@@ -1,7 +1,7 @@
 $fn = 25; // 50 is too many!  slic3r won't load it!
 copperZ = 0.85; // depth of copper indentation
-copperX = 12.72+0.65;  // 12.72mm + 0.06
-copperY = 28.00+0.63;  // 27.88mm + 0.52
+copperX = 12.72+0.75;  // 12.72mm + 0.06
+copperY = 28.00+0.75;  // 27.88mm + 0.52
 copperTrayY = copperY + 4; // width of copper tray
 copperTrayZ = 3; // thickness of copper tray
 copperCount = 3;  // how many we'll tray for
