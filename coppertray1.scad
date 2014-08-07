@@ -8,6 +8,7 @@ copperCount = 3;  // how many we'll tray for
 pegDiameter = 0.0625*25.4+1.4; // diameter of hole for peg
 screwDiameter = 0.138*25.4+1.8; // diameter of hole for screw 
 ooch = 0.05; // make each tray this much bigger, to search for perfect fit (doesn't center tray!)
+cornerCube = 2.5; // dimensions of corner cutout
 
 difference() {
   cube([(copperCount*(copperX+2))+2+4,copperTrayY,copperTrayZ]);  // the tray
@@ -22,17 +23,21 @@ difference() {
       translate([copperX/2,20.5,-0.1+copperZ/2-(copperTrayZ+0.2)/2]){
           cylinder (h = copperTrayZ+0.2, r = screwDiameter/2, center = true); // screw hole
         }
-      translate([copperX,0,copperZ-(copperZ*0.5)]){
-        cube (size = [1.5,1.5,copperZ*3], center = true);  // one of four corners
+      hull() {
+        translate([copperX,0,copperZ-(copperZ*0.5)+0.1]){
+          cube (size = [cornerCube,cornerCube,copperZ+0.2], center = true);  // one of four corners
+        }
+        translate([0,copperY,copperZ-(copperZ*0.5)+0.1]){
+          cube (size = [cornerCube,cornerCube,copperZ+0.2], center = true);
+        }
       }
-      translate([copperX,copperY,copperZ-(copperZ*0.5)]){
-        cube (size = [1.5,1.5,copperZ*3], center = true);
-      }
-      translate([0,0,copperZ-(copperZ*0.5)]){
-        cube (size = [1.5,1.5,copperZ*3], center = true);
-      }
-      translate([0,copperY,copperZ-(copperZ*0.5)]){
-        cube (size = [1.5,1.5,copperZ*3], center = true);
+      hull() {
+        translate([copperX,copperY,copperZ-(copperZ*0.5)+0.1]){
+          cube (size = [cornerCube,cornerCube,copperZ+0.2], center = true);
+        }
+        translate([0,0,copperZ-(copperZ*0.5)+0.1]){
+          cube (size = [cornerCube,cornerCube,copperZ+0.2], center = true);
+        }
       }
       translate([0,copperY*0.5,0]){
         rotate(a = [90,0,0]) { // rotate around x axis
