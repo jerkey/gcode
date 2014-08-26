@@ -3,9 +3,11 @@ G91 ; relative positioning START ON NEAR LEFT CORNER
 G1 X0.25 F500 ; start at the left edge of copper
 M106 ; turn on green resist extruder (and fan)
 G1 Y3 F100 ; do the left y run slow to start the flow
-G1 Y12 F500 ; do the left y run
-G1 X12.0 F500 ; do the x run
-G1 Y-12 F500 ; do the right -y run MINUS 3
+G1 Y13 F500 ; do the left y run
+G1 X2.0 Y-1 F500 ; do the x run LEFT CATEAR
+G1 X8.0 F500 ; do the x run
+G1 X2.0 Y1 F500 ; do the x run RIGHT CATEAR
+G1 Y-13 F500 ; do the right -y run MINUS 3
 M107 ; turn off green resist extruder (and fan)
 G1 Y-3 X0.25 F500 ; do the right -y run LAST 3 + RIGHT 0.25
 G1 Z5 F100 ; move up 5 SLOWLY
