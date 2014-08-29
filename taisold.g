@@ -1,11 +1,15 @@
-;pressure 40PSI    THIS PUTS SOLDER PASTE FOR TAI 10x15mm
+;pressure 50PSI    THIS PUTS SOLDER PASTE FOR TAI 10x15mm
 G91 ; relative positioning START ON NEAR LEFT CORNER
 G1 Z3 F500 ; move up
 G1 X2 Y14 F500 ; start at the left edge of copper
 G1 Z-3 F500 ; move down
 M106 ; turn on solder paste flow (and fan)
 G1 X8 F200 ; start laying down the solder paste
-G1 Y-3 ; Y=11 skipped the post-hole !
+G1 Y-1 ; Y=13
+G1 X-8
+G1 Y-1 ; Y=12
+G1 X8
+G1 Y-1 ; Y=11
 G1 X-8
 G1 Y-1 ; Y=10
 G1 X8
