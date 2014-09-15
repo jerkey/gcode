@@ -2,10 +2,7 @@
 G91 ; relative positioning
 M201 Y20 X20 ; set acceleration to 20
 G1 X-3.725 Y0.325 F2010 ; start at near right corner of copper!
-G1 Y6 F5000 ; go inland to touch down
-G1 Z-2.7 ; touch syringe to metal - start 2mm above!!!!!
-G1 Z2.6 ; this puts us 0.??mm above the metal
-G1 Y-6 F5000 ; come back from touchdown spot
+; start 2mm above!!!!!
 G1 Y-2.4 F2010 ; prepare for y descent 
 G1 Y3 Z-2 F1000 ; descend fast for the Y run
 G1 Y0.25 F500 ; do the y run PART 1/3
